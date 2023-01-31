@@ -2,31 +2,38 @@ const choices = ['rock', 'paper', 'scissors'];
 let userScore = 0;
 let computerScore = 0;
 
+
+function append_text(text) {
+  var main_div = document.getElementById("main_div");
+  var content = document.createTextNode(text);
+  main_div.appendChild(content);
+}
+
 function getComputerChoice() {
   return choices[Math.floor(Math.random() * 3)];
 }
 
 function playRound(playerSelection) {
   const computerSelection = getComputerChoice();
-  console.log(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
+  append_text(`You chose: ${playerSelection}, Computer chose: ${computerSelection}`);
 
   if (playerSelection === computerSelection) {
-    console.log('Tie!');
+    append_text('Tie!');
   } else if (
     (playerSelection === 'rock' && computerSelection === 'scissors') ||
     (playerSelection === 'paper' && computerSelection === 'rock') ||
     (playerSelection === 'scissors' && computerSelection === 'paper')
   ) {
-    console.log(`You win, ${playerSelection} beats ${computerSelection}`);
+    append_text(`You win, ${playerSelection} beats ${computerSelection}`);
     userScore++;
   } else {
-    console.log(`Computer wins, ${computerSelection} beats ${playerSelection}`);
+    append_text(`Computer wins, ${computerSelection} beats ${playerSelection}`);
     computerScore++;
   }
 }
 
 function game() {
-  console.log('Rock, paper, scissors! Best of 5 wins!');
+  append_text('Rock, paper, scissors! Best of 5 wins!');
 
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt(`Round ${i + 1}: Choose rock, paper, or scissors:`);
@@ -37,14 +44,14 @@ function game() {
     playRound(playerSelection);
   }
 
-  console.log(`Final Score: You ${userScore}, Computer ${computerScore}`);
+  append_text(`Final Score: You ${userScore}, Computer ${computerScore}`);
   if (userScore > computerScore) {
-    console.log('You win the game!');
+    append_text('You win the game!');
   } else if (userScore < computerScore) {
-    console.log('Computer wins the game!');
+    append_text('Computer wins the game!');
   } else {
-    console.log('The game is a tie!');
+    append_text('The game is a tie!');
   }
 }
 
-game();
+// game();
