@@ -1,41 +1,110 @@
-button {
-    background: royalblue;
-    border: 1px solid royalblue;
+body {
+    flex-wrap: wrap;
+    background-image: url('background.webp');
+}
+
+/* Top UI */
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: white;
-    border-radius: 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
     font-size: 20px;
-    padding: 8px;
-    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: auto;
 }
 
-#rock,
-#paper,
-#scissors {
-    margin-right: 20px;
+/* Middle UI */
+.interactions {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border-radius: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
     padding: 10px;
-}
-
-#results {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 700;
-}
-
-button:active {
-    background-color: red;
 }
 
 button:hover {
     background-color: lightskyblue;
 }
 
-h1 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+#rock,
+#paper,
+#scissors {
+    margin: auto;
 }
 
-p {
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgb(158, 155, 155);
-    width: 150px;
+#rock {
+    color: rgb(253, 253, 253);
+    background: rgb(246, 128, 242);
+    border: 4px solid rgb(245, 197, 204);
+}
+
+#rock:hover {
+    background-color: rgb(214, 100, 232);
+}
+
+#paper {
+    color: rgb(255, 255, 255);
+    background: rgb(229, 187, 0);
+    border: 4px solid rgb(251, 247, 160);
+}
+
+#paper:hover {
+    background-color: rgb(205, 153, 50);
+}
+
+#scissors {
+    color: rgb(201, 222, 239);
+    background: rgb(53, 109, 239);
+    border: 4px solid rgb(130, 155, 218);
+}
+
+#scissors:hover {
+    background-color: rgb(44, 91, 185);
+}
+
+/* Bottom UI */
+.bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.restart {
+    display: flex;
+    justify-content: center;
+}
+
+#restart {
+    margin-top: 20px;
+    background-color: white;
+    border: 4px solid rgb(134, 134, 134);
+}
+
+#restart:hover {
+    background-color: rgb(185, 185, 185);
+}
+
+#results {
+    display: flex;
+    flex-basis: 425px;
+    color: rgb(210, 210, 210);
+    background-color: rgba(0, 0, 0, 0.535);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    border: 4px solid brown;
+    border-radius: 4px;
+    padding: 10px;
 }

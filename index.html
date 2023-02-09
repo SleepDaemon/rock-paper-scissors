@@ -2,20 +2,28 @@
     <link rel="stylesheet" href="style.css"
 
 <head>
-    <title>Rock-Paper-Scissors</title>
+    <title>Simple RPS</title>
 </head>
 
 <body>
-    <h1>Rock-Paper-Scissors</h1>
-    <p>Choose your move:</p>
-    <button id="rock" onclick="playRound('rock')">Rock</button>
-    <button id="paper" onclick="playRound('paper')">Paper</button>
-    <button id="scissors" onclick="playRound('scissors')">Scissors</button>
+    <div class="top">
+        <h1>Rock-Paper-Scissors</h1>
+        <p>Choose your move</p>
+    </div>
+    <div class = 'interactions'> 
+        <button id="rock" onclick="playRound('rock')">Rock</button>
+        <button id="paper" onclick="playRound('paper')">Paper</button>
+        <button id="scissors" onclick="playRound('scissors')">Scissors</button>
+    </div>
     <br><br>
-    <div id="results"></div>
-    <br>
-    <br>
-    <button onclick="window.location.reload()">Restart</button>
+    <div class = 'bottom'>
+        <div id="results"></div>
+        <br><br>
+        <!-- <button id="restart" onclick="window.location.reload()">Restart</button> -->
+    </div>
+    <div class="restart">
+        <button id="restart" onclick="window.location.reload()">Restart</button>
+    </div>
     <script>
         const options = ['rock', 'paper', 'scissors'];
         let playerScore = 0;
@@ -51,7 +59,7 @@
                 outcome = 'Computer wins!';
                 computerScore++;
             }
-            resultsDiv.innerHTML += `Round ${round}: ${outcome} Player: ${playerChoice} Computer: ${computerChoice} <br>`;
+            resultsDiv.innerHTML += `Round ${round}: ${outcome} Player: ${playerChoice} ---- Computer: ${computerChoice} <br>`;
         }
     </script>
 </body>
